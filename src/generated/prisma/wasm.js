@@ -132,7 +132,18 @@ exports.Prisma.UserScalarFieldEnum = {
   description: 'description',
   baptism: 'baptism',
   enterchurch: 'enterchurch',
-  password: 'password'
+  password: 'password',
+  created_at: 'created_at',
+  updated_at: 'updated_at',
+  position_id: 'position_id'
+};
+
+exports.Prisma.PositionScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  description: 'description',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 };
 
 exports.Prisma.SortOrder = {
@@ -145,9 +156,15 @@ exports.Prisma.QueryMode = {
   insensitive: 'insensitive'
 };
 
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
+
 
 exports.Prisma.ModelName = {
-  User: 'User'
+  User: 'User',
+  Position: 'Position'
 };
 
 /**

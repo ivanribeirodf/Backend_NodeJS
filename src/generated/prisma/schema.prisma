@@ -10,7 +10,7 @@ datasource db {
 
 // how to create table => yarn prisma migrate dev 
 model User {
-  id          String   @id @default(uuid())
+  id          String    @id @default(uuid())
   name        String
   birtgdate   DateTime
   email       String
@@ -25,6 +25,24 @@ model User {
   baptism     DateTime
   enterchurch DateTime
   password    String
+  created_at  DateTime? @default(now())
+  updated_at  DateTime? @default(now())
+
+  position Position @relation(fields: [position_id], references: [id])
+
+  position_id String
 
   @@map("users")
+}
+
+model Position {
+  id          String    @id @default(uuid())
+  name        String
+  description String
+  created_at  DateTime? @default(now())
+  updated_at  DateTime? @default(now())
+
+  users User[]
+
+  @@map("position_ibla")
 }
